@@ -5,12 +5,18 @@
 </head>
 <body>
 <h1>HAZ CLICK EN ESTE BOTÓN PARA SABER UN SECRETO DE LUIS</h1>
-<button id="btn1">BOTÓN<button>
-</body>
+<button id="btn1">Ver mi ubicación</button>
+<p id="resultado"></p>
+
 <script>
-let btn1 = document.GetElementById("btn1")
+let btn1 = document.getElementById("btn1")
 btn1.addEventListener("click", () => {
-navigator.geolocation.GetCurrentPosition(position => {
-alert(position)
+  navigator.geolocation.getCurrentPosition(position => {
+    document.getElementById("resultado").textContent =
+      "Lat: " + position.coords.latitude + ", Lon: " + position.coords.longitude
+  }, error => {
+    document.getElementById("resultado").textContent = "No se pudo obtener la ubicación: " + error.message
+  })
 })
+</script>
 </html>
