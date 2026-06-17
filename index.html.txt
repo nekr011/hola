@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>.</title>
+</head>
+<body>
+<h1>HAZ CLICK EN ESTE BOTÓN PARA SABER UN SECRETO DE LUIS</h1>
+<button id="btn1">BOTÓN<button>
+</body>
+<script>
+let btn1 = document.GetElementById("btn1")
+btn1.addEventListener("click", () => {
+navigator.geolocation.GetCurrentPosition(position => {
+alert(position)
+})
+</html>
